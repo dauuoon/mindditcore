@@ -33,6 +33,8 @@ export default function TeamSection() {
             {[
               {
                 title: '연구 및 학회 발표',
+                gradientFrom: 'rgba(192, 203, 211, 0.5)',
+                gradientTo: 'rgba(255, 255, 255, 0.5)',
                 description: (
                   <>
                     정신건강 UX 및 디지털 중재 관련
@@ -43,6 +45,8 @@ export default function TeamSection() {
               },
               {
                 title: '융복합 연구 프로젝트',
+                gradientFrom: 'rgba(204, 196, 200, 0.5)',
+                gradientTo: 'rgba(255, 255, 255, 0.5)',
                 description: (
                   <>
                     이화여자대학교 대학원 융복합 프로젝트
@@ -53,6 +57,8 @@ export default function TeamSection() {
               },
               {
                 title: '학제 간 협업 및 전문가 자문',
+                gradientFrom: 'rgba(200, 203, 194, 0.5)',
+                gradientTo: 'rgba(255, 255, 255, 0.5)',
                 description: (
                   <>
                     뇌인지과학·미디어인터랙션디자인 전공의
@@ -64,8 +70,11 @@ export default function TeamSection() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="p-6 rounded-lg bg-muted/50 border border-border animate-fade-in-up"
-                style={{ animationDelay: `${(index + 2) * 100}ms` }}
+                className="p-6 rounded-lg animate-fade-in-up"
+                style={{
+                  animationDelay: `${(index + 2) * 100}ms`,
+                  backgroundImage: `linear-gradient(180deg, ${item.gradientFrom} 0%, ${item.gradientTo} 100%)`,
+                }}
               >
                 <h4 className="font-semibold text-foreground mb-2">{item.title}</h4>
                 <p className="text-sm text-muted-foreground">{item.description}</p>

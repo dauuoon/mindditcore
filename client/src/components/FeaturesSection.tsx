@@ -84,12 +84,6 @@ export default function FeaturesSection() {
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center pt-0">
-          <button className="px-6 py-2 text-foreground opacity-50 font-semibold hover:text-muted-foreground transition-colors duration-200 underline underline-offset-4 inline-flex items-center gap-2">
-            더 자세한 기능보기 →
-          </button>
-        </div>
       </div>
 
 
