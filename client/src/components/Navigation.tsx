@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import logo from '@/assets/logo.svg';
 
 interface NavigationProps {
   onNavClick: (sectionId: string) => void;
@@ -19,9 +20,9 @@ export default function Navigation({ onNavClick }: NavigationProps) {
 
   const navItems = [
     { label: '홈', id: 'hero' },
-    { label: '기능', id: 'features' },
+    { label: '핵심 기능', id: 'features' },
     { label: '강점', id: 'advantages' },
-    { label: '팀', id: 'team' },
+    { label: '팀 소개', id: 'team' },
     { label: '자주 묻는 질문', id: 'faq' },
   ];
 
@@ -33,20 +34,15 @@ export default function Navigation({ onNavClick }: NavigationProps) {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled
-        ? 'bg-background/98 backdrop-blur-md border-b border-border/50 shadow-sm'
-        : 'bg-background/80 backdrop-blur-sm border-b border-border/30'
+        ? 'bg-white/98 backdrop-blur-md border-b border-border/50 shadow-sm'
+        : 'bg-white/80 backdrop-blur-sm border-b border-border/30'
     }`}>
       <div className={`container flex items-center justify-between transition-all duration-300 ${
         isScrolled ? 'h-16 md:h-18' : 'h-16 md:h-20'
       }`}>
         {/* Logo */}
         <div className="flex items-center gap-2 cursor-pointer" onClick={() => handleNavClick('hero')}>
-          <div className="w-8 h-8 bg-foreground rounded-lg flex items-center justify-center">
-            <span className="text-background font-bold text-lg">M</span>
-          </div>
-          <div className="hidden sm:block">
-            <div className="font-bold text-lg text-foreground">Minddit·Core</div>
-          </div>
+          <img src={logo} alt="Minddit Core 로고" className="h-5 md:h-6 w-auto" />
         </div>
 
         {/* Desktop Navigation */}
@@ -62,7 +58,7 @@ export default function Navigation({ onNavClick }: NavigationProps) {
           ))}
           <button
             onClick={() => handleNavClick('beta')}
-            className="px-4 py-2 bg-foreground text-background rounded-lg font-medium hover:bg-muted-foreground transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
+            className="px-4 py-2 bg-[#485763] text-white rounded-lg font-medium hover:bg-[#3f4c57] transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
           >
             베타 신청하기
           </button>
@@ -79,7 +75,7 @@ export default function Navigation({ onNavClick }: NavigationProps) {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden border-t border-border bg-background animate-dissolve">
+        <div className="md:hidden border-t border-border bg-white animate-dissolve">
           <div className="container py-4 flex flex-col gap-3">
             {navItems.map((item) => (
             <button
@@ -92,7 +88,7 @@ export default function Navigation({ onNavClick }: NavigationProps) {
             ))}
             <button
               onClick={() => handleNavClick('beta')}
-              className="w-full px-4 py-2 bg-foreground text-background rounded-lg font-medium hover:bg-muted-foreground transition-all duration-200 hover:shadow-lg active:scale-95"
+              className="w-full px-4 py-2 bg-[#485763] text-white rounded-lg font-medium hover:bg-[#3f4c57] transition-all duration-200 hover:shadow-lg active:scale-95"
             >
               베타 신청하기
             </button>

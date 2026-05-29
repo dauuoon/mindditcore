@@ -40,7 +40,7 @@ const faqs = [
 
 export default function FaqSection() {
   return (
-    <section id="faq" className="py-20 md:py-28 bg-background">
+    <section id="faq" className="py-20 md:py-28">
       <div className="container max-w-4xl">
         <div className="text-center mb-10 md:mb-14">
           <h2 className="font-heading text-foreground mb-4">자주 묻는 질문</h2>

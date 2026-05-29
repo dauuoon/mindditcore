@@ -1,31 +1,55 @@
-import { Blocks, CalendarCheck2, UsersRound, BellRing } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import featureImage1 from '@/assets/1.svg';
+import featureImage2 from '@/assets/2.svg';
+import featureImage3 from '@/assets/3.svg';
+import featureImage4 from '@/assets/4.svg';
 
 const features = [
   {
-    icon: Blocks,
+    cardImage: featureImage1,
     title: '프로그램 설계',
-    description: '활동 블록을 조립해 회차별 프로그램을 손쉽게 구성하세요.',
   },
   {
-    icon: CalendarCheck2,
+    cardImage: featureImage2,
     title: '프로그램 운영',
-    description: '온·오프라인 어디서든 세션을 실시간으로 진행하세요.',
   },
   {
-    icon: UsersRound,
+    cardImage: featureImage3,
     title: '참여자 관리',
-    description: '프로그램 안내, 초대부터 출결 및 활동 내역까지 관리하세요.',
   },
   {
-    icon: BellRing,
+    cardImage: featureImage4,
     title: '참여 지속성 강화',
-    description: '다양한 활동과 리마인더 알림을 통한 몰입 강화.',
   },
 ];
 
 export default function FeaturesSection() {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const [cardsVisible, setCardsVisible] = useState(false);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setCardsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.25 }
+    );
+
+    observer.observe(section);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
-    <section id="features" className="py-20 md:py-32 bg-background relative">
+    <section id="features" ref={sectionRef} className="py-20 md:py-32 bg-white relative">
       {/* Background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-muted/20 rounded-full blur-3xl" />
@@ -42,41 +66,26 @@ export default function FeaturesSection() {
         </div>
 
         {/* Features Grid - Dark Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-10">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group card-elevated p-6 md:p-8 bg-secondary text-secondary-foreground hover:shadow-lg transition-all duration-300 animate-fade-in-up rounded-lg"
-              style={{
-                animationDelay: `${index * 100}ms`,
-                animationFillMode: 'both',
-              }}
+              className={`group overflow-hidden rounded-3xl transition-all duration-700 ease-out hover:shadow-lg ${
+                cardsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+              }`}
+              style={{ transitionDelay: `${index * 140}ms` }}
             >
-              {/* Icon */}
-              <div className="mb-5">
-                <div className="w-11 h-11 rounded-full border border-secondary-foreground/30 flex items-center justify-center bg-secondary-foreground/5">
-                  <feature.icon className="w-5 h-5 text-secondary-foreground" />
-                </div>
-              </div>
-
-              {/* Title */}
-              <h3 className="font-subheading text-secondary-foreground mb-3 group-hover:opacity-90 transition-opacity duration-300">
-                {feature.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-sm text-secondary-foreground/80 mb-4 group-hover:text-secondary-foreground transition-colors duration-300 leading-relaxed">
-                {feature.description}
-              </p>
-
-              {/* Hover Line */}
-              <div className="mt-4 h-0.5 bg-secondary-foreground/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <img
+                src={feature.cardImage}
+                alt={`${feature.title} 카드`}
+                className="w-full h-full object-cover rounded-3xl"
+              />
             </div>
           ))}
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center pt-8 border-t border-border">
+        <div className="text-center pt-0">
           <button className="px-6 py-2 text-foreground opacity-50 font-semibold hover:text-muted-foreground transition-colors duration-200 underline underline-offset-4 inline-flex items-center gap-2">
             더 자세한 기능보기 →
           </button>

@@ -44,20 +44,35 @@ export default function BetaSection() {
   };
 
   return (
-    <section id="beta" className="py-20 md:py-32 bg-gradient-to-br from-primary/5 via-background to-secondary/5 relative">
+    <section id="beta" className="py-20 md:py-32 bg-gradient-to-br from-[rgba(167,185,198,0.25)] via-[rgba(167,185,198,0.16)] to-transparent relative">
       {/* Background */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[rgba(167,185,198,0.25)] rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[rgba(167,185,198,0.2)] rounded-full blur-3xl" />
       </div>
 
-      <div className="container max-w-2xl">
+      <div className="container max-w-4xl">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16 animate-fade-in-up">
           <h2 className="font-heading text-foreground mb-4">
             마인딧 코어 테스터 신청
           </h2>
           <div className="structural-line mx-auto w-24 mb-6" />
+          <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-xl mx-auto">
+            마인딧 코어를 가장 먼저 경험해볼 분들을 찾고 있습니다.
+          </p>
+          <div className="mt-4 max-w-2xl mx-auto space-y-1 text-center text-xs md:text-sm text-muted-foreground/70 leading-snug">
+            <p>
+              <span>
+                <span className="font-semibold text-foreground">대상 :</span> 정신건강 프로그램 운영하는 전문가, 실무자, 기관 담당자 등
+              </span>
+            </p>
+            <p>
+              <span>
+                <span className="font-semibold text-foreground">혜택 :</span> 초기 사용자 선정, 우선 안내, 피드백 참여 기회, 할인 혜택 등
+              </span>
+            </p>
+          </div>
         </div>
 
         {/* Form */}
@@ -77,7 +92,7 @@ export default function BetaSection() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="your@email.com"
-                    className="w-full pl-12 pr-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-muted-foreground/30 focus:border-muted-foreground/50 transition-all duration-200"
+                    className="w-full pl-12 pr-4 py-3 rounded-2xl border border-border bg-background text-foreground placeholder:text-muted-foreground/50 shadow-[0_10px_28px_rgba(0,0,0,0.04)] focus:outline-none focus:ring-2 focus:ring-muted-foreground/30 focus:border-muted-foreground/50 focus:shadow-[0_12px_34px_rgba(0,0,0,0.06)] transition-all duration-200"
                     required
                   />
                 </div>
@@ -112,7 +127,7 @@ export default function BetaSection() {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full px-6 py-3 bg-foreground text-background rounded-lg font-semibold hover:bg-muted-foreground transition-all duration-300 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
+                className="w-full px-6 py-3 bg-[#485763] text-white rounded-lg font-semibold hover:bg-[#3f4c57] transition-all duration-300 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
               >
                 {isLoading ? '신청 중...' : '신청하기'}
               </button>
@@ -141,9 +156,6 @@ export default function BetaSection() {
             <h3 className="font-subheading text-foreground mb-2">신청이 완료되었습니다!</h3>
             <p className="text-muted-foreground mb-4">
               베타 테스트 관련 소식을 이메일로 받으실 수 있습니다.
-            </p>
-            <p className="text-sm text-muted-foreground/70">
-              감사합니다! 곧 마인딧 코어와 함께하실 수 있기를 기대합니다.
             </p>
           </div>
         )}

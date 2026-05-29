@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { Mail, Github, Linkedin } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import LegalDialog from '@/components/LegalDialog';
+import logo from '@/assets/logo_2.svg';
 
 export default function Footer() {
   const [legalType, setLegalType] = useState<'privacy' | 'terms' | null>(null);
@@ -13,12 +14,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-background rounded-lg flex items-center justify-center">
-                <span className="text-foreground font-bold text-lg">M</span>
-              </div>
-              <div>
-                <div className="font-bold text-lg">Minddit·Core</div>
-              </div>
+              <img src={logo} alt="Minddit Core 로고" className="h-10 w-auto invert" />
             </div>
           </div>
 
@@ -45,7 +41,7 @@ export default function Footer() {
                   }}
                   className="opacity-80 hover:opacity-100 transition-opacity duration-200"
                 >
-                  기능
+                  핵심 기능
                 </button>
               </li>
               <li>
@@ -67,7 +63,7 @@ export default function Footer() {
                   }}
                   className="opacity-80 hover:opacity-100 transition-opacity duration-200"
                 >
-                  팀
+                  팀 소개
                 </button>
               </li>
               <li>
@@ -106,22 +102,6 @@ export default function Footer() {
                 <Mail size={16} />
                 contact@minddit.com
               </a>
-              <div className="flex gap-3 pt-2">
-                <a
-                  href="#"
-                  className="p-2 rounded-lg bg-background/10 hover:bg-background/20 transition-colors duration-200"
-                  aria-label="GitHub"
-                >
-                  <Github size={16} />
-                </a>
-                <a
-                  href="#"
-                  className="p-2 rounded-lg bg-background/10 hover:bg-background/20 transition-colors duration-200"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin size={16} />
-                </a>
-              </div>
             </div>
           </div>
         </div>

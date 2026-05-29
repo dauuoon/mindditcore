@@ -2,7 +2,7 @@
 
 export default function TeamSection() {
   return (
-    <section id="team" className="py-20 md:py-32 bg-background relative">
+    <section id="team" className="py-20 md:py-32 bg-white relative">
       {/* Background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 left-1/2 w-96 h-96 bg-secondary/5 rounded-full blur-3xl -translate-x-1/2" />
@@ -47,7 +47,7 @@ export default function TeamSection() {
                   <>
                     이화여자대학교 대학원 융복합 프로젝트
                     <br />
-                    예비 장학생 선정
+                    예비 장학팀 선정
                   </>
                 ),
               },

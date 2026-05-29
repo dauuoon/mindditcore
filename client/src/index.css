@@ -303,6 +303,142 @@
     animation: slideInRight 0.6s ease-out;
   }
 
+  @keyframes heroGraphicPulse {
+    0% {
+      opacity: 0.16;
+      filter: saturate(88%);
+    }
+    20% {
+      opacity: 0.44;
+      filter: saturate(94%);
+    }
+    50% {
+      opacity: 0.64;
+      filter: saturate(100%);
+    }
+    75% {
+      opacity: 0.34;
+      filter: saturate(92%);
+    }
+    100% {
+      opacity: 0.16;
+      filter: saturate(88%);
+    }
+  }
+
+  .animate-hero-graphic {
+    animation: heroGraphicPulse 10s ease-in-out infinite;
+  }
+
+  .animate-hero-graphic-soft {
+    animation: heroGraphicPulse 12.5s ease-in-out infinite;
+  }
+
+  @keyframes heroCellPulseA {
+    0% {
+      opacity: 0.22;
+    }
+    25% {
+      opacity: 0.72;
+    }
+    50% {
+      opacity: 0.34;
+    }
+    75% {
+      opacity: 0.82;
+    }
+    100% {
+      opacity: 0.22;
+    }
+  }
+
+  @keyframes heroCellPulseB {
+    0% {
+      opacity: 0.76;
+    }
+    25% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.78;
+    }
+    75% {
+      opacity: 0.24;
+    }
+    100% {
+      opacity: 0.76;
+    }
+  }
+
+  @keyframes heroCellPulseSoft {
+    0% {
+      opacity: 0.14;
+    }
+    40% {
+      opacity: 0.38;
+    }
+    70% {
+      opacity: 0.2;
+    }
+    100% {
+      opacity: 0.14;
+    }
+  }
+
+  .hero-graphic-svg {
+    opacity: 0.96;
+  }
+
+  .hero-cell {
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    transform-origin: center;
+    will-change: opacity;
+  }
+
+  .hero-cell-a {
+    animation-name: heroCellPulseA;
+    animation-duration: 4.2s;
+    animation-delay: -0.4s;
+  }
+
+  .hero-cell-b {
+    animation-name: heroCellPulseB;
+    animation-duration: 5s;
+    animation-delay: -1.8s;
+  }
+
+  .hero-cell-c {
+    animation-name: heroCellPulseA;
+    animation-duration: 4.6s;
+    animation-delay: -2.9s;
+  }
+
+  .hero-cell-d {
+    animation-name: heroCellPulseB;
+    animation-duration: 5.4s;
+    animation-delay: -3.6s;
+  }
+
+  .hero-cell-e {
+    animation-name: heroCellPulseA;
+    animation-duration: 4.8s;
+    animation-delay: -4.4s;
+  }
+
+  .hero-cell-f {
+    animation-name: heroCellPulseB;
+    animation-duration: 5.2s;
+    animation-delay: -2.2s;
+  }
+
+  .hero-cell-soft {
+    animation-name: heroCellPulseSoft;
+    animation-duration: 6.2s;
+    animation-delay: -5s;
+    opacity: 0.35;
+  }
+
   /* Smooth transitions for interactive elements */
   button, a, input, textarea, select {
     transition: all 0.2s ease-out;
