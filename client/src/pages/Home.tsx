@@ -68,7 +68,7 @@ export default function Home() {
       {showTopButton ? (
         <button
           onClick={handleTopClick}
-          className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-black text-white shadow-lg hover:opacity-90 transition-all duration-200 active:scale-95"
+          className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full surface-brand text-white shadow-lg hover:opacity-90 transition-all duration-200 active:scale-95 surface-brand-hover"
           aria-label="맨 위로 이동"
         >
           <ArrowUp className="mx-auto" size={18} />

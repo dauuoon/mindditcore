@@ -1,0 +1,21 @@
+@layer components {
+  .font-display {
+    @apply font-bold text-5xl md:text-6xl tracking-tight;
+  }
+
+  .font-heading {
+    @apply font-semibold text-3xl md:text-4xl tracking-tight;
+  }
+
+  .font-subheading {
+    @apply font-semibold text-xl md:text-2xl tracking-tight;
+  }
+
+  .font-body {
+    @apply font-normal text-base leading-relaxed;
+  }
+
+  .font-caption {
+    @apply font-medium text-sm text-muted-foreground;
+  }
+}

@@ -60,9 +60,8 @@ export default function FeaturesSection() {
         {/* Section Header */}
         <div className="text-center mb-16 md:mb-20 animate-fade-in-up">
           <h2 className="font-heading text-foreground mb-4">
-            마인딧 코어 핵심 기능
+            핵심 기능
           </h2>
-          <div className="structural-line mx-auto w-24 mb-6" />
         </div>
 
         {/* Features Grid - Dark Cards */}
@@ -70,15 +69,16 @@ export default function FeaturesSection() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`group overflow-hidden rounded-3xl transition-all duration-700 ease-out hover:shadow-lg ${
+              className={`group overflow-hidden rounded-base transition-all duration-700 ease-out ${
                 cardsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
               }`}
-              style={{ transitionDelay: `${index * 140}ms` }}
+              style={{ transitionDelay: `${index * 140}ms`, borderRadius: '12px' }}
             >
               <img
                 src={feature.cardImage}
                 alt={`${feature.title} 카드`}
-                className="w-full h-full object-cover rounded-3xl"
+                className="w-full h-full object-cover rounded-base"
+                style={{ borderRadius: '12px' }}
               />
             </div>
           ))}

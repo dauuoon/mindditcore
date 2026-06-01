@@ -90,7 +90,13 @@ export default function LegalDialog({ open, onOpenChange, type }: LegalDialogPro
           {content.body.map((paragraph, idx) => (
             <p
               key={idx}
-              className={isSectionHeading(paragraph) ? 'font-semibold text-foreground' : undefined}
+              className={
+                isSectionHeading(paragraph)
+                  ? 'font-semibold text-foreground mt-6 first:mt-0 mb-1'
+                  : isBulletLine(paragraph)
+                    ? 'pl-1'
+                    : undefined
+              }
             >
               {isBulletLine(paragraph) ? normalizeBullet(paragraph) : paragraph}
             </p>

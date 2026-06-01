@@ -14,8 +14,8 @@ export default function HeroSection({ onCTAClick }: HeroSectionProps) {
 
       {/* Background Elements */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-white/28" />
-        <div className="absolute inset-0 bg-gradient-to-br from-white/12 via-transparent to-[#F7F2F2]/18" />
+        <div className="absolute inset-0 surface-hero-veil" />
+        <div className="absolute inset-0 surface-hero-gradient" />
 
         {/* Geometric shapes */}
         <div className="absolute top-20 right-10 w-72 h-72 bg-secondary/5 rounded-full blur-3xl" />
@@ -34,9 +34,9 @@ export default function HeroSection({ onCTAClick }: HeroSectionProps) {
 
           {/* Main Headline */}
           <h1 className="font-display text-foreground mb-4 leading-tight">
-            <span className="block mb-2">마인딧 코어</span>
-            <span className="block font-semibold text-black/65">운영은 더 편리하게,</span>
-            <span className="block font-semibold text-black/65">프로그램은 더 가치 있게.</span>
+            <span className="block mb-2 text-[var(--surface-hero-brand)]">마인딧 코어</span>
+            <span className="block font-semibold text-[var(--surface-hero-brand-subtle)]">운영은 더 편리하게,</span>
+            <span className="block font-semibold text-[var(--surface-hero-brand-subtle)]">프로그램은 더 가치 있게.</span>
           </h1>
 
           {/* Subheading */}
@@ -49,16 +49,17 @@ export default function HeroSection({ onCTAClick }: HeroSectionProps) {
           {/* CTA Button */}
           <div className="flex flex-col sm:flex-row gap-4 justify-start mb-20">
             <div className="w-full sm:w-auto relative pt-4">
-              <div className="absolute top-0.5 left-4 z-10 animate-bounce">
+              <div className="absolute top-0.5 left-1/2 -translate-x-1/2 z-10 animate-bounce">
                 <span className="inline-block whitespace-nowrap rounded-full bg-white px-3 py-1 text-[11px] md:text-xs font-semibold text-foreground shadow-md border border-border">
-                  할인 혜택 및 우선 사용 제공
+                  얼리 액세스 및 할인 혜택
                 </span>
               </div>
               <button
                 onClick={onCTAClick}
-                className="w-full sm:w-auto px-8 py-3 bg-[#485763] text-white rounded-lg font-semibold hover:bg-[#3f4c57] transition-all duration-300 hover:shadow-lg hover:scale-105 active:scale-95"
+                className="w-full sm:w-auto px-8 py-3 surface-brand text-white rounded-base font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 active:scale-95 surface-brand-hover"
+                style={{ borderRadius: '12px' }}
               >
-                베타 테스터 신청하기
+                테스터 신청하기
               </button>
             </div>
           </div>

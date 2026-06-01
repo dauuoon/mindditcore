@@ -58,15 +58,17 @@ export default function Navigation({ onNavClick }: NavigationProps) {
           ))}
           <button
             onClick={() => handleNavClick('beta')}
-            className="px-4 py-2 bg-[#485763] text-white rounded-lg font-medium hover:bg-[#3f4c57] transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
+            className="px-4 py-2 surface-brand text-white rounded-base font-medium transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95 surface-brand-hover"
+            style={{ borderRadius: '12px' }}
           >
-            베타 신청하기
+            테스터 신청하기
           </button>
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 hover:bg-muted rounded-lg transition-all duration-200 active:scale-95"
+          className="md:hidden p-2 hover:bg-muted rounded-base transition-all duration-200 active:scale-95"
+          style={{ borderRadius: '12px' }}
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -81,16 +83,18 @@ export default function Navigation({ onNavClick }: NavigationProps) {
             <button
               key={item.id}
               onClick={() => handleNavClick(item.id)}
-              className="text-left px-4 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-lg transition-all duration-200 hover:translate-x-1"
+              className="text-left px-4 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-base transition-all duration-200 hover:translate-x-1"
+              style={{ borderRadius: '12px' }}
             >
               {item.label}
             </button>
             ))}
             <button
               onClick={() => handleNavClick('beta')}
-              className="w-full px-4 py-2 bg-[#485763] text-white rounded-lg font-medium hover:bg-[#3f4c57] transition-all duration-200 hover:shadow-lg active:scale-95"
+              className="w-full px-4 py-2 surface-brand text-white rounded-base font-medium transition-all duration-200 hover:shadow-lg active:scale-95 surface-brand-hover"
+              style={{ borderRadius: '12px' }}
             >
-              베타 신청하기
+              테스터 신청하기
             </button>
           </div>
         </div>

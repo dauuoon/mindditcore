@@ -20,7 +20,6 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4">메뉴</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <button
@@ -69,17 +68,6 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => {
-                    const element = document.getElementById('beta');
-                    element?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="opacity-80 hover:opacity-100 transition-opacity duration-200"
-                >
-                  베타 신청
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => {
                     const element = document.getElementById('faq');
                     element?.scrollIntoView({ behavior: 'smooth' });
                   }}
@@ -88,12 +76,23 @@ export default function Footer() {
                   자주 묻는 질문
                 </button>
               </li>
+              <li>
+                <button
+                  onClick={() => {
+                    const element = document.getElementById('beta');
+                    element?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="opacity-80 hover:opacity-100 transition-opacity duration-200"
+                >
+                  테스터 신청
+                </button>
+              </li>
             </ul>
           </div>
 
           {/* Contact & Social */}
           <div>
-            <h4 className="font-semibold mb-4">연락처</h4>
+            <h4 className="font-semibold mb-4">Contact</h4>
             <div className="space-y-3">
               <a
                 href="mailto:contact@minddit.com"

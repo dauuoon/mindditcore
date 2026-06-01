@@ -1,0 +1,175 @@
+:root {
+  /* Primary palette */
+  --blue200: #bcdff3;
+  --red200: #f4d5e0;
+  --green200: #c8d5ba;
+  --teal200: #c1dbd9;
+  --yellow200: #f0eeb5;
+  --blue700: #0688d3;
+  --red700: #ad4e70;
+  --green700: #68814e;
+  --teal700: #417572;
+  --yellow700: #8c8a47;
+
+  /* Natural palette */
+  --bg100: #dae3e9;
+  --bg200: #c0cbd3;
+  --bg900: #485763;
+  --rg100: #dcd6d9;
+  --rg200: #ccc4c8;
+  --rg900: #594b51;
+  --gg100: #dbded5;
+  --gg200: #c8cbc2;
+  --gg900: #4f5847;
+  --tg100: #cbd8d9;
+  --tg200: #bfcfd0;
+  --tg900: #475858;
+  --yg100: #f0efe8;
+  --yg200: #e0dfd1;
+  --yg900: #595849;
+
+  /* Grayscale */
+  --g100: #f7f7f7;
+  --g200: #e4e4e4;
+  --g300: #d0d0d0;
+  --g400: #bababa;
+  --g500: #888888;
+  --g600: #757575;
+  --g700: #5b5b5b;
+  --g800: #424242;
+  --g900: #292929;
+
+  /* Semantic tokens used by the app */
+  --primary: var(--bg900);
+  --primary-foreground: #ffffff;
+
+  --secondary: var(--rg900);
+  --secondary-foreground: #ffffff;
+
+  --accent: var(--tg900);
+  --accent-foreground: #ffffff;
+
+  --background: var(--g100);
+  --foreground: var(--g900);
+  --card: #ffffff;
+  --card-foreground: var(--g900);
+  --popover: #ffffff;
+  --popover-foreground: var(--g900);
+
+  --muted: var(--g200);
+  --muted-foreground: var(--g600);
+
+  --border: var(--g200);
+  --input: var(--g200);
+  --ring: var(--g900);
+
+  --destructive: #ad4e70;
+  --destructive-foreground: #ffffff;
+
+  /* Sidebar */
+  --sidebar: var(--g100);
+  --sidebar-foreground: var(--g900);
+  --sidebar-primary: var(--bg900);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--rg900);
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: var(--g200);
+  --sidebar-ring: var(--g900);
+
+  /* Chart */
+  --chart-1: var(--bg900);
+  --chart-2: var(--rg900);
+  --chart-3: var(--gg900);
+  --chart-4: var(--tg900);
+  --chart-5: var(--yg900);
+
+  --radius: 0.75rem;
+}
+
+:root {
+  --surface-hero-brand: var(--g900);
+  --surface-hero-brand-subtle: rgba(41, 41, 41, 0.75);
+  --surface-hero-brand-hover: #3f4c57;
+  --surface-hero-white-veil: rgba(255, 255, 255, 0.28);
+  --surface-hero-white-soft: rgba(255, 255, 255, 0.12);
+  --surface-hero-rose-soft: rgba(247, 242, 242, 0.18);
+
+  --surface-beta-start: rgba(167, 185, 198, 0.25);
+  --surface-beta-mid: rgba(167, 185, 198, 0.16);
+  --surface-beta-shadow-1: rgba(167, 185, 198, 0.25);
+  --surface-beta-shadow-2: rgba(167, 185, 198, 0.2);
+  --surface-beta-shadow-3: rgba(0, 0, 0, 0.04);
+  --surface-beta-shadow-4: rgba(0, 0, 0, 0.06);
+
+  --surface-advantage-1: rgba(192, 203, 211, 0.15);
+  --surface-advantage-2: rgba(204, 196, 200, 0.15);
+  --surface-advantage-3: rgba(200, 203, 194, 0.15);
+
+  --surface-team-1-start: rgba(192, 203, 211, 0.5);
+  --surface-team-2-start: rgba(204, 196, 200, 0.5);
+  --surface-team-3-start: rgba(200, 203, 194, 0.5);
+  --surface-team-end: rgba(255, 255, 255, 0.5);
+
+  --surface-brand: var(--bg900);
+  --surface-brand-hover: #3f4c57;
+  --surface-brand-tint-10: rgba(72, 87, 99, 0.1);
+}
+
+.dark {
+  --primary: #0688d3;
+  --primary-foreground: #ffffff;
+  --sidebar-primary: #0688d3;
+  --sidebar-primary-foreground: #ffffff;
+
+  --background: #242424;
+  --foreground: #e6e6e6;
+  --card: #313131;
+  --card-foreground: #e6e6e6;
+  --popover: #313131;
+  --popover-foreground: #e6e6e6;
+  --secondary: #3b3b3b;
+  --secondary-foreground: #d9d9d9;
+  --muted: #3d3d3d;
+  --muted-foreground: #c4c4c4;
+  --accent: #3d3d3d;
+  --accent-foreground: #ededed;
+  --destructive: #c85d7f;
+  --destructive-foreground: #ffffff;
+  --border: rgb(255 255 255 / 10%);
+  --input: rgb(255 255 255 / 15%);
+  --ring: #7caefc;
+
+  --sidebar: #313131;
+  --sidebar-foreground: #e6e6e6;
+  --sidebar-accent: #3d3d3d;
+  --sidebar-accent-foreground: #ededed;
+  --sidebar-border: rgb(255 255 255 / 10%);
+  --sidebar-ring: #7caefc;
+
+  --surface-hero-brand: #e6e6e6;
+  --surface-hero-brand-subtle: rgba(230, 230, 230, 0.75);
+  --surface-hero-brand-hover: #5f6d79;
+  --surface-hero-white-veil: rgba(255, 255, 255, 0.1);
+  --surface-hero-white-soft: rgba(255, 255, 255, 0.06);
+  --surface-hero-rose-soft: rgba(255, 255, 255, 0.06);
+
+  --surface-beta-start: rgba(124, 174, 252, 0.18);
+  --surface-beta-mid: rgba(124, 174, 252, 0.12);
+  --surface-beta-shadow-1: rgba(0, 0, 0, 0.18);
+  --surface-beta-shadow-2: rgba(0, 0, 0, 0.12);
+  --surface-beta-shadow-3: rgba(0, 0, 0, 0.14);
+  --surface-beta-shadow-4: rgba(0, 0, 0, 0.2);
+
+  --surface-advantage-1: rgba(124, 174, 252, 0.12);
+  --surface-advantage-2: rgba(124, 174, 252, 0.12);
+  --surface-advantage-3: rgba(124, 174, 252, 0.12);
+
+  --surface-team-1-start: rgba(124, 174, 252, 0.16);
+  --surface-team-2-start: rgba(124, 174, 252, 0.16);
+  --surface-team-3-start: rgba(124, 174, 252, 0.16);
+  --surface-team-end: rgba(255, 255, 255, 0.08);
+
+  --surface-brand: #0688d3;
+  --surface-brand-hover: #5f6d79;
+  --surface-brand-tint-10: rgba(230, 230, 230, 0.1);
+}
