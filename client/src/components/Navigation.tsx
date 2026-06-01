@@ -42,7 +42,7 @@ export default function Navigation({ onNavClick }: NavigationProps) {
       }`}>
         {/* Logo */}
         <div className="flex items-center gap-2 cursor-pointer" onClick={() => handleNavClick('hero')}>
-          <img src={logo} alt="Minddit Core 로고" className="h-5 md:h-6 w-auto" />
+          <img src={logo} alt="Minddit Core 로고" className="h-7 md:h-8 w-auto" />
         </div>
 
         {/* Desktop Navigation */}
