@@ -5,21 +5,39 @@ import { Check } from 'lucide-react';
 const advantages = [
   {
     title: '연구 기반 설계',
-    description: '이화여자대학교 뇌인지과학 및 미디어인터랙션 전공 기반의 연구 프로젝트입니다. 정신건강과 디지털 사용자 경험의 연결을 연구하며 제작 중인 서비스입니다.',
+    description: (
+      <>
+        이화여자대학교 뇌인지과학 및 미디어인터랙션 전공 기반의 연구 프로젝트입니다.
+        <br />
+        정신건강과 디지털 사용자 경험의 연결을 연구하며 제작 중인 서비스입니다.
+      </>
+    ),
     highlights: ['학제 간 협력 연구', '사용자 경험 중심 설계', '과학적 근거 기반'],
     bgColor: 'var(--surface-brand-tint-10)',
     sectionBgColor: 'var(--surface-advantage-1)',
   },
   {
     title: '전문가 중심 설계',
-    description: '정신건강 전문가와 기관의 실제 운영 경험을 반영했습니다. 현장의 목소리를 듣고 만든 플랫폼으로, 실제 필요를 충족하는 기능을 제공합니다.',
+    description: (
+      <>
+        정신건강 전문가와 기관의 실제 운영 경험을 반영했습니다.
+        <br />
+        현장의 목소리를 듣고 만든 플랫폼으로, 실제 필요를 충족하는 기능을 제공합니다.
+      </>
+    ),
     highlights: ['전문가 피드백 반영', '현장 경험 기반 개발', '지속적인 개선'],
     bgColor: 'var(--surface-brand-tint-10)',
     sectionBgColor: 'var(--surface-advantage-2)',
   },
   {
     title: '신뢰감 있는 구조',
-    description: '명확한 정보 구조와 직관적인 인터페이스로 사용자의 신뢰를 얻습니다. 복잡한 운영을 단순하게 만들어 전문가가 집중할 수 있도록 지원합니다.',
+    description: (
+      <>
+        명확한 정보 구조와 직관적인 인터페이스로 사용자의 신뢰를 얻습니다.
+        <br />
+        복잡한 운영을 단순하게 만들어 전문가가 집중할 수 있도록 지원합니다.
+      </>
+    ),
     highlights: ['미니멀 디자인', '직관적 인터페이스', '사용성 중심'],
     bgColor: 'var(--surface-brand-tint-10)',
     sectionBgColor: 'var(--surface-advantage-3)',
@@ -42,7 +60,7 @@ export default function AdvantagesSection() {
   return (
     <section
       id="advantages"
-      className="py-20 md:py-32 relative transition-colors duration-500"
+      className="-mt-28 md:-mt-36 pt-[10.5rem] md:pt-[14rem] pb-20 md:pb-32 relative transition-colors duration-500"
       style={{ backgroundColor: advantages[activeIndex].sectionBgColor }}
     >
       {/* Background */}
@@ -54,13 +72,6 @@ export default function AdvantagesSection() {
       </div>
 
       <div className="container">
-        {/* Section Header */}
-        <div className="text-center mb-16 md:mb-20 animate-fade-in-up">
-          <h2 className="font-heading text-foreground mb-4">
-            강점
-          </h2>
-        </div>
-
         {/* Main Content - 2 Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
           {/* Left: Image/Visual Area */}

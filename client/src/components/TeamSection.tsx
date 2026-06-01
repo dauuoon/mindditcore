@@ -2,7 +2,7 @@
 
 export default function TeamSection() {
   return (
-    <section id="team" className="py-20 md:py-32 bg-white relative">
+    <section id="team" className="mt-8 md:mt-10 pt-28 md:pt-36 pb-20 md:pb-32 bg-white relative">
       {/* Background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 left-1/2 w-96 h-96 bg-secondary/5 rounded-full blur-3xl -translate-x-1/2" />
@@ -10,7 +10,7 @@ export default function TeamSection() {
 
       <div className="container">
         {/* Section Header */}
-        <div className="text-center mb-16 md:mb-20 animate-fade-in-up">
+        <div className="text-center mt-6 md:mt-8 mb-8 md:mb-10 animate-fade-in-up">
           <h2 className="font-heading text-foreground mb-4">
             마인딧 팀 소개
           </h2>
@@ -20,7 +20,7 @@ export default function TeamSection() {
         <div className="max-w-4xl mx-auto">
           {/* Main Description */}
           <div className="text-center mb-8 md:mb-10 animate-fade-in-up" style={{ animationDelay: '100ms' }}>
-            <p className="text-lg md:text-xl text-foreground leading-relaxed font-medium">
+            <p className="text-base md:text-lg text-foreground leading-relaxed font-normal">
               마인딧 코어는 정신건강 전문가의 운영 부담을 줄이고,
               <br />
               프로그램 경험에 더 집중할 수 있도록 돕기 위해 시작된 연구 기반 프로젝트입니다.

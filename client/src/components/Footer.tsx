@@ -46,17 +46,6 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => {
-                    const element = document.getElementById('advantages');
-                    element?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="opacity-80 hover:opacity-100 transition-opacity duration-200"
-                >
-                  강점
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => {
                     const element = document.getElementById('team');
                     element?.scrollIntoView({ behavior: 'smooth' });
                   }}

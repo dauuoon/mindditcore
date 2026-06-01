@@ -1,6 +1,59 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Mail, CheckCircle } from 'lucide-react';
 import LegalDialog from '@/components/LegalDialog';
+
+const betaGradientLayers = [
+  {
+    name: 'red-1',
+    color: 'var(--red200)',
+    gradient: 'linear-gradient(to top, var(--red200) 0%, rgba(255, 255, 255, 0.92) 52%, #ffffff 100%)',
+  },
+  {
+    name: 'yellow-1',
+    color: 'var(--yellow200)',
+    gradient: 'linear-gradient(to top, var(--yellow200) 0%, rgba(255, 255, 255, 0.92) 52%, #ffffff 100%)',
+  },
+  {
+    name: 'green-1',
+    color: 'var(--green200)',
+    gradient: 'linear-gradient(to top, var(--green200) 0%, rgba(255, 255, 255, 0.92) 52%, #ffffff 100%)',
+  },
+  {
+    name: 'teal-1',
+    color: 'var(--teal200)',
+    gradient: 'linear-gradient(to top, var(--teal200) 0%, rgba(255, 255, 255, 0.92) 52%, #ffffff 100%)',
+  },
+  {
+    name: 'blue-1',
+    color: 'var(--blue200)',
+    gradient: 'linear-gradient(to top, var(--blue200) 0%, rgba(255, 255, 255, 0.92) 52%, #ffffff 100%)',
+  },
+  {
+    name: 'teal-2',
+    color: 'var(--teal200)',
+    gradient: 'linear-gradient(to top, var(--teal200) 0%, rgba(255, 255, 255, 0.92) 52%, #ffffff 100%)',
+  },
+  {
+    name: 'green-2',
+    color: 'var(--green200)',
+    gradient: 'linear-gradient(to top, var(--green200) 0%, rgba(255, 255, 255, 0.92) 52%, #ffffff 100%)',
+  },
+  {
+    name: 'yellow-2',
+    color: 'var(--yellow200)',
+    gradient: 'linear-gradient(to top, var(--yellow200) 0%, rgba(255, 255, 255, 0.92) 52%, #ffffff 100%)',
+  },
+  {
+    name: 'red-2',
+    color: 'var(--red200)',
+    gradient: 'linear-gradient(to top, var(--red200) 0%, rgba(255, 255, 255, 0.92) 52%, #ffffff 100%)',
+  },
+] as const;
+
+const GOOGLE_SHEET_WEBHOOK_URL =
+  'https://script.google.com/macros/s/AKfycbws7pMdF0M11KzVdc7FSiqCzAc1OV_M5HrlpyCX8p7VKj3mrE64R4zCjWx2L1N5wHlJ3A/exec';
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 export default function BetaSection() {
   const [email, setEmail] = useState('');
@@ -9,6 +62,17 @@ export default function BetaSection() {
   const [agreed, setAgreed] = useState(false);
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
   const [statusToast, setStatusToast] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
+  const [activeGradientIndex, setActiveGradientIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = window.setInterval(() => {
+      setActiveGradientIndex((currentIndex) => (currentIndex + 1) % betaGradientLayers.length);
+    }, 6500);
+
+    return () => {
+      window.clearInterval(intervalId);
+    };
+  }, []);
 
   const showStatusToast = (type: 'success' | 'error', message: string) => {
     setStatusToast({ type, message });
@@ -20,40 +84,80 @@ export default function BetaSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!email || !agreed) {
+    const normalizedEmail = email.trim().toLowerCase();
+
+    if (!normalizedEmail) {
+      showStatusToast('error', '이메일을 입력해주세요.');
+      return;
+    }
+
+    if (!EMAIL_REGEX.test(normalizedEmail)) {
+      showStatusToast('error', '올바른 이메일 형식으로 입력해주세요.');
+      return;
+    }
+
+    if (!agreed) {
       showStatusToast('error', '이메일과 약관 동의가 필요합니다.');
       return;
     }
 
     setIsLoading(true);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const payload = new URLSearchParams({
+        email: normalizedEmail,
+      });
 
-    setIsSubmitted(true);
-    setEmail('');
-    setAgreed(false);
-    setIsLoading(false);
+      const response = await fetch(GOOGLE_SHEET_WEBHOOK_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: payload,
+      });
 
-    showStatusToast('success', '베타 테스트 신청이 완료되었습니다!');
+      // no-cors mode returns an opaque response; reaching here means the request was sent.
+      if (!response) {
+        throw new Error('request_failed');
+      }
 
-    // Reset after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-    }, 3000);
+      setIsSubmitted(true);
+      setEmail('');
+      setAgreed(false);
+      showStatusToast('success', '베타 테스트 신청이 완료되었습니다!');
+
+      // Reset after 3 seconds
+      setTimeout(() => {
+        setIsSubmitted(false);
+      }, 3000);
+    } catch {
+      showStatusToast('error', '신청 전송 중 문제가 발생했습니다. 잠시 후 다시 시도해주세요.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
     <section
       id="beta"
-      className="py-20 md:py-32 relative overflow-hidden"
-      style={{
-        backgroundImage: 'linear-gradient(to top, var(--blue200) 0%, rgba(255, 255, 255, 0.92) 52%, #ffffff 100%)',
-      }}
+      className="py-20 md:py-32 relative overflow-hidden bg-white"
     >
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[var(--blue200)] rounded-full blur-3xl opacity-70" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0.94)_52%,#ffffff_100%)]" />
+        {betaGradientLayers.map((layer, index) => (
+          <div
+            key={layer.name}
+            className={`absolute inset-0 transition-[opacity,transform] duration-[2400ms] ease-out ${
+              index === activeGradientIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+            aria-hidden="true"
+          >
+            <div className="absolute inset-0" style={{ backgroundImage: layer.gradient }} />
+            <div
+              className="absolute bottom-0 left-1/4 w-96 h-96 rounded-full blur-3xl opacity-70"
+              style={{ backgroundColor: layer.color }}
+            />
+          </div>
+        ))}
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-white rounded-full blur-3xl opacity-60" />
       </div>
 

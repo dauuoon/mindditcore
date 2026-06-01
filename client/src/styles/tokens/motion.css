@@ -115,6 +115,44 @@
     }
   }
 
+  @keyframes betaGradientCycle {
+    0%,
+    100% {
+      background-image: linear-gradient(to top, var(--blue200) 0%, rgba(255, 255, 255, 0.92) 52%, #ffffff 100%);
+    }
+    20% {
+      background-image: linear-gradient(to top, var(--red200) 0%, rgba(255, 255, 255, 0.92) 52%, #ffffff 100%);
+    }
+    40% {
+      background-image: linear-gradient(to top, var(--green200) 0%, rgba(255, 255, 255, 0.92) 52%, #ffffff 100%);
+    }
+    60% {
+      background-image: linear-gradient(to top, var(--teal200) 0%, rgba(255, 255, 255, 0.92) 52%, #ffffff 100%);
+    }
+    80% {
+      background-image: linear-gradient(to top, var(--yellow200) 0%, rgba(255, 255, 255, 0.92) 52%, #ffffff 100%);
+    }
+  }
+
+  @keyframes betaOrbCycle {
+    0%,
+    100% {
+      background-color: var(--blue200);
+    }
+    20% {
+      background-color: var(--red200);
+    }
+    40% {
+      background-color: var(--green200);
+    }
+    60% {
+      background-color: var(--teal200);
+    }
+    80% {
+      background-color: var(--yellow200);
+    }
+  }
+
   .animate-fade-in-up {
     animation: fadeInUp 0.6s ease-out;
   }
@@ -191,6 +229,16 @@
     animation-duration: 6.2s;
     animation-delay: -5s;
     opacity: 0.35;
+  }
+
+  .beta-gradient-cycle {
+    animation: betaGradientCycle 18s linear infinite;
+    will-change: background-image;
+  }
+
+  .beta-gradient-orb {
+    animation: betaOrbCycle 18s linear infinite;
+    will-change: background-color;
   }
 
   button,

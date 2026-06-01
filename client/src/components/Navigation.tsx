@@ -21,7 +21,6 @@ export default function Navigation({ onNavClick }: NavigationProps) {
   const navItems = [
     { label: '홈', id: 'hero' },
     { label: '핵심 기능', id: 'features' },
-    { label: '강점', id: 'advantages' },
     { label: '팀 소개', id: 'team' },
     { label: '자주 묻는 질문', id: 'faq' },
   ];
@@ -42,7 +41,7 @@ export default function Navigation({ onNavClick }: NavigationProps) {
       }`}>
         {/* Logo */}
         <div className="flex items-center gap-2 cursor-pointer" onClick={() => handleNavClick('hero')}>
-          <img src={logo} alt="Minddit Core 로고" className="h-7 md:h-8 w-auto" />
+          <img src={logo} alt="Minddit Core 로고" className="h-6 md:h-7 w-auto" />
         </div>
 
         {/* Desktop Navigation */}

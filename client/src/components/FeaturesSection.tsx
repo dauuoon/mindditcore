@@ -49,7 +49,7 @@ export default function FeaturesSection() {
   }, []);
 
   return (
-    <section id="features" ref={sectionRef} className="py-20 md:py-32 bg-white relative">
+    <section id="features" ref={sectionRef} className="pt-16 md:pt-24 pb-10 md:pb-14 bg-white relative">
       {/* Background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-muted/20 rounded-full blur-3xl" />
@@ -60,7 +60,7 @@ export default function FeaturesSection() {
         {/* Section Header */}
         <div className="text-center mb-16 md:mb-20 animate-fade-in-up">
           <h2 className="font-heading text-foreground mb-4">
-            핵심 기능
+            왜 마인딧 코어인가요?
           </h2>
         </div>
 
