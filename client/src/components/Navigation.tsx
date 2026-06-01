@@ -57,7 +57,7 @@ export default function Navigation({ onNavClick }: NavigationProps) {
           ))}
           <button
             onClick={() => handleNavClick('beta')}
-            className="px-4 py-2 surface-brand text-white rounded-base font-medium transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95 surface-brand-hover"
+            className="px-3 py-2 text-sm surface-brand text-white rounded-base font-medium transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95 surface-brand-hover"
             style={{ borderRadius: '12px' }}
           >
             테스터 신청하기
@@ -90,7 +90,7 @@ export default function Navigation({ onNavClick }: NavigationProps) {
             ))}
             <button
               onClick={() => handleNavClick('beta')}
-              className="w-full px-4 py-2 surface-brand text-white rounded-base font-medium transition-all duration-200 hover:shadow-lg active:scale-95 surface-brand-hover"
+              className="w-full px-3 py-2 text-sm surface-brand text-white rounded-base font-medium transition-all duration-200 hover:shadow-lg active:scale-95 surface-brand-hover"
               style={{ borderRadius: '12px' }}
             >
               테스터 신청하기

@@ -20,10 +20,10 @@ export default function TeamSection() {
         <div className="max-w-4xl mx-auto">
           {/* Main Description */}
           <div className="text-center mb-8 md:mb-10 animate-fade-in-up" style={{ animationDelay: '100ms' }}>
-            <p className="text-base md:text-lg text-foreground leading-relaxed font-normal">
-              마인딧 코어는 정신건강 전문가의 운영 부담을 줄이고,
+            <p className="text-sm md:text-base text-foreground leading-relaxed font-normal">
+              정신건강 전문가들은 프로그램 자체보다 운영과 관리에 더 많은 시간을 쓰고 있습니다.
               <br />
-              프로그램 경험에 더 집중할 수 있도록 돕기 위해 시작된 연구 기반 프로젝트입니다.
+              마인딧 팀은 전문가가 사람과 프로그램에 더 집중할 수 있는 환경을 만들고자 마인딧 코어를 시작했습니다.
             </p>
           </div>
 
