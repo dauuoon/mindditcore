@@ -40,7 +40,7 @@ export default function Footer() {
                   }}
                   className="opacity-80 hover:opacity-100 transition-opacity duration-200"
                 >
-                  핵심 기능
+                  마인딧 코어
                 </button>
               </li>
               <li>

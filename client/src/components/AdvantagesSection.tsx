@@ -60,18 +60,18 @@ export default function AdvantagesSection() {
   return (
     <section
       id="advantages"
-      className="-mt-28 md:-mt-36 pt-[10.5rem] md:pt-[14rem] pb-20 md:pb-32 relative transition-colors duration-500"
+      className="-mt-28 md:-mt-36 pt-[10.5rem] md:pt-[14rem] pb-20 md:pb-32 relative isolate transition-colors duration-500"
       style={{ backgroundColor: advantages[activeIndex].sectionBgColor }}
     >
       {/* Background */}
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 -z-20 pointer-events-none" aria-hidden="true">
         <div
           className="absolute top-1/2 right-0 w-96 h-96 rounded-full blur-3xl transition-colors duration-500"
           style={{ backgroundColor: advantages[activeIndex].sectionBgColor }}
         />
       </div>
 
-      <div className="container">
+      <div className="container relative z-10">
         {/* Main Content - 2 Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
           {/* Left: Image/Visual Area */}

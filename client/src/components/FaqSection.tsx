@@ -60,9 +60,11 @@ const faqs = [
 
 export default function FaqSection() {
   return (
-    <section id="faq" className="pt-10 md:pt-14 pb-20 md:pb-28">
-      <div className="container max-w-4xl">
-        <div className="text-center mb-10 md:mb-14">
+    <section id="faq" className="relative overflow-hidden pt-10 md:pt-14 pb-20 md:pb-28">
+      <div className="absolute -top-12 md:-top-14 inset-x-0 bottom-0 bg-[#DAE3E9] opacity-30" aria-hidden="true" />
+
+      <div className="container max-w-[60rem] relative z-10">
+        <div className="text-center mt-6 md:mt-8 mb-10 md:mb-14">
           <h2 className="font-heading text-foreground mb-4">자주 묻는 질문</h2>
         </div>
 

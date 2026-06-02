@@ -10,8 +10,8 @@ export default function TeamSection() {
 
       <div className="container">
         {/* Section Header */}
-        <div className="text-center mt-6 md:mt-8 mb-8 md:mb-10 animate-fade-in-up">
-          <h2 className="font-heading text-foreground mb-4">
+        <div className="text-center mt-6 md:mt-8 mb-4 md:mb-6 animate-fade-in-up">
+          <h2 className="font-heading text-foreground mb-2">
             마인딧 팀 소개
           </h2>
         </div>
@@ -20,7 +20,7 @@ export default function TeamSection() {
         <div className="max-w-4xl mx-auto">
           {/* Main Description */}
           <div className="text-center mb-8 md:mb-10 animate-fade-in-up" style={{ animationDelay: '100ms' }}>
-            <p className="text-sm md:text-base text-foreground leading-relaxed font-normal">
+            <p className="text-sm md:text-base text-muted-foreground leading-relaxed font-normal">
               정신건강 전문가들은 프로그램 자체보다 운영과 관리에 더 많은 시간을 쓰고 있습니다.
               <br />
               마인딧 팀은 전문가가 사람과 프로그램에 더 집중할 수 있는 환경을 만들고자 마인딧 코어를 시작했습니다.

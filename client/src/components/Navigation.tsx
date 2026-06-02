@@ -20,7 +20,7 @@ export default function Navigation({ onNavClick }: NavigationProps) {
 
   const navItems = [
     { label: '홈', id: 'hero' },
-    { label: '핵심 기능', id: 'features' },
+    { label: '마인딧 코어', id: 'features' },
     { label: '팀 소개', id: 'team' },
     { label: '자주 묻는 질문', id: 'faq' },
   ];

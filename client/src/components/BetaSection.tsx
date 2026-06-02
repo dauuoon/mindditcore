@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Mail, CheckCircle } from 'lucide-react';
 import LegalDialog from '@/components/LegalDialog';
+import userIcon from '@/assets/user.png';
+import giftIcon from '@/assets/gift.png';
 
 const betaGradientLayers = [
   {
@@ -161,33 +163,48 @@ export default function BetaSection() {
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-white rounded-full blur-3xl opacity-60" />
       </div>
 
-      <div className="relative z-10 container max-w-4xl">
+      <div className="relative z-10 container max-w-[60rem]">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16 animate-fade-in-up">
-          <h2 className="font-heading text-foreground mb-4">
+          <h2 className="font-heading text-foreground mb-2">
             테스터 신청
           </h2>
           <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-xl mx-auto">
             마인딧 코어를 가장 먼저 경험할 분들을 찾고 있습니다.
           </p>
-          <div className="mt-4 max-w-2xl mx-auto space-y-1 text-center text-xs md:text-sm text-muted-foreground/70 leading-snug">
-            <p>
-              <span>
-                <span className="font-semibold text-foreground">대상 :</span> 정신건강 프로그램 운영하는 전문가, 실무자, 기관 담당자 등
-              </span>
-            </p>
-            <p>
-              <span>
-                <span className="font-semibold text-foreground">혜택 :</span> 초기 사용자 선정, 우선 안내, 피드백 참여 기회, 할인 혜택 등
-              </span>
-            </p>
+          <div className="mt-14 max-w-2xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2">
+              <div className="flex items-start gap-4 py-3 justify-center">
+                <img src={userIcon} alt="대상 아이콘" className="w-14 h-14 md:w-16 md:h-16 object-contain shrink-0" />
+                <div className="text-left">
+                  <h3 className="text-lg md:text-xl font-bold tracking-tight text-foreground mb-2">대상</h3>
+                  <p className="text-foreground/80 text-xs md:text-sm leading-snug">
+                    정신건강 프로그램 운영하는
+                    <br />
+                    전문가 · 실무자 · 기관 담당자 등
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 py-3 mt-8 md:mt-0 border-t md:border-t-0 md:border-l border-border/60 justify-center">
+                <img src={giftIcon} alt="혜택 아이콘" className="w-14 h-14 md:w-16 md:h-16 object-contain shrink-0" />
+                <div className="text-left">
+                  <h3 className="text-lg md:text-xl font-bold tracking-tight text-foreground mb-2">혜택</h3>
+                  <p className="text-foreground/80 text-xs md:text-sm leading-snug">
+                    초기 사용자 선정 · 우선 안내
+                    <br />
+                    피드백 참여 기회 · 할인 혜택 등
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Form */}
         {!isSubmitted ? (
           <form onSubmit={handleSubmit} className="animate-fade-in-up" style={{ animationDelay: '100ms' }}>
-            <div className="bg-card/80 rounded-base p-8 md:p-10 border border-border" style={{ borderRadius: '12px' }}>
+            <div className="bg-card rounded-base p-8 md:p-10" style={{ borderRadius: '12px' }}>
               {/* Email Input */}
               <div className="mb-6">
                 <label htmlFor="email" className="block text-sm font-semibold text-foreground mb-3">
@@ -201,7 +218,7 @@ export default function BetaSection() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="your@email.com"
-                    className="w-full pl-12 pr-4 py-3 rounded-base border border-border bg-background text-foreground placeholder:text-muted-foreground/50 shadow-[0_10px_28px_rgba(0,0,0,0.04)] focus:outline-none focus:ring-2 focus:ring-muted-foreground/30 focus:border-muted-foreground/50 focus:shadow-[0_12px_34px_rgba(0,0,0,0.06)] transition-all duration-200"
+                    className="w-full pl-12 pr-4 py-3 rounded-base bg-[#f0f0f0] text-foreground placeholder:text-muted-foreground/50 shadow-[0_10px_28px_rgba(0,0,0,0.04)] focus:outline-none focus:ring-2 focus:ring-muted-foreground/30 focus:shadow-[0_12px_34px_rgba(0,0,0,0.06)] transition-all duration-200"
                     style={{ borderRadius: '12px' }}
                     required
                   />
@@ -215,8 +232,7 @@ export default function BetaSection() {
                   type="checkbox"
                   checked={agreed}
                   onChange={(e) => setAgreed(e.target.checked)}
-                  className="mt-1 w-4 h-4 rounded-base border-border cursor-pointer"
-                  style={{ accentColor: 'var(--surface-brand)', borderRadius: '12px' }}
+                  className="mt-0.5 w-5 h-5 rounded-[4px] border border-border cursor-pointer appearance-none bg-background checked:bg-[var(--surface-brand)] checked:border-[var(--surface-brand)] relative checked:after:content-['✓'] checked:after:absolute checked:after:inset-0 checked:after:flex checked:after:items-center checked:after:justify-center checked:after:text-[11px] checked:after:font-bold checked:after:text-white"
                 />
                 <label htmlFor="agree" className="text-sm text-muted-foreground cursor-pointer whitespace-nowrap">
                   <button
@@ -228,9 +244,9 @@ export default function BetaSection() {
                       setIsPrivacyOpen(true);
                     }}
                   >
-                    개인정보 처리 방침
+                    개인정보 처리방침
                   </button>
-                  에 동의하며, 베타 테스트 관련 소식을 받기를 원합니다.
+                  에 동의합니다.
                 </label>
               </div>
 
