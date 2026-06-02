@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Check } from 'lucide-react';
+import trustStructureImage from '@/assets/test1.png';
 
 
 const advantages = [
@@ -41,6 +42,7 @@ const advantages = [
     highlights: ['미니멀 디자인', '직관적 인터페이스', '사용성 중심'],
     bgColor: 'var(--surface-brand-tint-10)',
     sectionBgColor: 'var(--surface-advantage-3)',
+    image: trustStructureImage,
   },
 ];
 
@@ -83,6 +85,13 @@ export default function AdvantagesSection() {
               className="w-full h-full"
               style={{ backgroundColor: advantages[activeIndex].bgColor }}
             />
+            {advantages[activeIndex].image ? (
+              <img
+                src={advantages[activeIndex].image}
+                alt={`${advantages[activeIndex].title} 미리보기`}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            ) : null}
           </div>
 
           {/* Right: Text Content */}
