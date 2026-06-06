@@ -10,98 +10,96 @@ export default function Footer() {
     <>
       <footer className="bg-foreground text-background py-12 md:py-16 border-t border-foreground/20">
         <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-8 md:mb-12">
-          {/* Brand */}
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <img src={logo} alt="Minddit Core 로고" className="h-10 w-auto invert" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-8 md:mb-12">
+            {/* Brand */}
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <img src={logo} alt="Minddit Core 로고" className="h-10 w-auto invert" />
+              </div>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <button
+                    onClick={() => {
+                      const element = document.getElementById('hero');
+                      element?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="opacity-80 hover:opacity-100 transition-opacity duration-200"
+                  >
+                    홈
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => {
+                      const element = document.getElementById('features');
+                      element?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="opacity-80 hover:opacity-100 transition-opacity duration-200"
+                  >
+                    마인딧 코어
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => {
+                      const element = document.getElementById('team');
+                      element?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="opacity-80 hover:opacity-100 transition-opacity duration-200"
+                  >
+                    팀 소개
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => {
+                      const element = document.getElementById('faq');
+                      element?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="opacity-80 hover:opacity-100 transition-opacity duration-200"
+                  >
+                    자주 묻는 질문
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => {
+                      const element = document.getElementById('beta');
+                      element?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="opacity-80 hover:opacity-100 transition-opacity duration-200"
+                  >
+                    테스터 신청
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            {/* Contact & Social */}
+            <div>
+              <h4 className="font-semibold mb-4">Contact</h4>
+              <div className="space-y-3">
+                <a
+                  href="mailto:minddit@naver.com"
+                  className="flex items-center gap-2 text-sm opacity-80 hover:opacity-100 transition-opacity duration-200"
+                >
+                  <Mail size={16} />
+                  minddit@naver.com
+                </a>
+              </div>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <button
-                  onClick={() => {
-                    const element = document.getElementById('hero');
-                    element?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="opacity-80 hover:opacity-100 transition-opacity duration-200"
-                >
-                  홈
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => {
-                    const element = document.getElementById('features');
-                    element?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="opacity-80 hover:opacity-100 transition-opacity duration-200"
-                >
-                  마인딧 코어
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => {
-                    const element = document.getElementById('team');
-                    element?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="opacity-80 hover:opacity-100 transition-opacity duration-200"
-                >
-                  팀 소개
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => {
-                    const element = document.getElementById('faq');
-                    element?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="opacity-80 hover:opacity-100 transition-opacity duration-200"
-                >
-                  자주 묻는 질문
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => {
-                    const element = document.getElementById('beta');
-                    element?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="opacity-80 hover:opacity-100 transition-opacity duration-200"
-                >
-                  테스터 신청
-                </button>
-              </li>
-            </ul>
-          </div>
+          {/* Divider */}
+          <div className="h-px bg-background/20 mb-8" />
 
-          {/* Contact & Social */}
-          <div>
-            <h4 className="font-semibold mb-4">Contact</h4>
-            <div className="space-y-3">
-              <a
-                href="mailto:contact@minddit.com"
-                className="flex items-center gap-2 text-sm opacity-80 hover:opacity-100 transition-opacity duration-200"
-              >
-                <Mail size={16} />
-                contact@minddit.com
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Divider */}
-        <div className="h-px bg-background/20 mb-8" />
-
-        {/* Bottom */}
+          {/* Bottom */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-            <p className="opacity-50">
-              Minddit Core © 2026 All rights reserved.
-            </p>
+            <p className="opacity-50">Minddit Core © 2026 All rights reserved.</p>
             <div className="flex gap-6">
               <button
                 type="button"
@@ -119,8 +117,6 @@ export default function Footer() {
               </button>
             </div>
           </div>
-
-
         </div>
       </footer>
       <LegalDialog

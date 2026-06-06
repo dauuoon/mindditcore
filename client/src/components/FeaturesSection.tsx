@@ -75,7 +75,7 @@ export default function FeaturesSection() {
             왜 마인딧 코어인가요?
           </h2>
           <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-xl mx-auto">
-            정신건강 프로그램 준비부터 진행, 기록과 회고까지.
+            정신건강 프로그램 준비부터 진행 · 기록과 회고까지
             <br />
             운영자가 더 중요한 일에 집중할 수 있도록 반복적인 업무를 줄여드립니다.
           </p>
