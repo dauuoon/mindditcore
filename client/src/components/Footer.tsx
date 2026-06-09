@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Mail } from 'lucide-react';
 import LegalDialog from '@/components/LegalDialog';
 import logo from '@/assets/logo_2.svg';
+import blogIcon from '@/assets/blog.png';
 
 export default function Footer() {
   const [legalType, setLegalType] = useState<'privacy' | 'terms' | null>(null);
@@ -94,14 +95,11 @@ export default function Footer() {
                   href="https://blog.naver.com/minddit"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm opacity-80 hover:opacity-100 transition-opacity duration-200"
+                  className="inline-flex h-8 w-8 items-center justify-center overflow-hidden rounded-full opacity-90 hover:opacity-100 transition-opacity duration-200"
                   aria-label="네이버 블로그"
+                  title="네이버 블로그"
                 >
-                  <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <rect width="24" height="24" rx="4" fill="#03C75A" />
-                    <path d="M7 7h4.3l5.7 8V7h3v10h-4.2L10 9.2V17H7V7z" fill="white" />
-                  </svg>
-                  네이버 블로그
+                  <img src={blogIcon} alt="" className="h-full w-full object-cover" />
                 </a>
               </div>
             </div>
